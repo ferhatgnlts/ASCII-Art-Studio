@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image to ASCII Art</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Image to ASCII Art Converter</h1>
+
+    <!-- Image Source Panel -->
+    <div class="panel" id="image-source-panel">
+      <div class="tab-buttons">
+        <button class="tab-button active" data-tab="url-tab">From URL</button>
+        <button class="tab-button" data-tab="upload-tab">Upload</button>
+        <button class="tab-button" data-tab="sample-tab">Sample</button>
+      </div>
+      
+      <div id="url-tab" class="source-option active">
+        <input type="text" id="image-url" placeholder="Enter image URL (include https://)" value="image.webp" />
+        <button id="load-url-btn" class="primary">Load Image</button>
+      </div>
+      
+      <div id="upload-tab" class="source-option">
+        <input type="file" id="file-input" accept="image/*" />
+        <button id="load-file-btn" class="primary">Upload Image</button>
+      </div>
+      
+      <div id="sample-tab" class="source-option">
+        <select id="sample-select">
+          <option value="image.jpg">Default Sample</option>
+          <option value="https://picsum.photos/800/600">Random Image</option>
+          <option value="https://placekitten.com/800/600">Kitten</option>
+        </select>
+        <button id="load-sample-btn" class="primary">Load Sample</button>
+      </div>
+    </div>
+
+    <!-- Original Image -->
+    <div class="panel" id="original-image-container">
+      <img id="original-image" src="image.webp" alt="Original Image" crossorigin="anonymous" />
+    </div>
+
+    <!-- Control Panel -->
+    <div class="panel">
+      <div class="control-group">
+        <div class="control-item">
+          <label for="width-slider">Width: <span id="width-value" class="range-value">100</span> px</label>
+          <input type="range" id="width-slider" min="50" max="300" value="100">
+        </div>
+        <div class="control-item">
+          <label for="contrast-slider">Contrast: <span id="contrast-value" class="range-value">100</span>%</label>
+          <input type="range" id="contrast-slider" min="50" max="150" value="100">
+        </div>
+        <div class="control-item">
+          <label for="brightness-slider">Brightness: <span id="brightness-value" class="range-value">100</span>%</label>
+          <input type="range" id="brightness-slider" min="50" max="150" value="100">
+        </div>
+        <div class="control-item">
+          <label for="charset-select">Charset:</label>
+          <select id="charset-select">
+            <option value="standard">@#8&o:*. </option>
+            <option value="blocks">█▓▒░. </option>
+            <option value="dots">.:*+=- </option>
+            <option value="detailed">@%#*+=-:. </option>
+            <option value="binary">01 </option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="control-group">
+        <button id="convert-btn" class="primary">Convert to ASCII</button>
+        <button id="invert-btn">Invert Colors</button>
+        <button id="copy-btn">Copy ASCII</button>
+        <button id="download-btn">Download ASCII</button>
+      </div>
+    </div>
+
+    <!-- ASCII Output -->
+    <div class="panel">
+      <div id="ascii-wrapper">
+        <div id="ascii-container"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
