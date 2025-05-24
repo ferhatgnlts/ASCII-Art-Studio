@@ -21,7 +21,7 @@
    ```
 
 2. **Use the demo**:
-   - Visit [Live Demo](https://your-demo-link.com)
+   - Visit [Live Demo](https://ferhatgnlts.github.io/ASCII-Art-Studio/)
    - Drag & drop any image
    - Tweak settings and enjoy!
 
